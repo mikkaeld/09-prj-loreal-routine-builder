@@ -17,16 +17,41 @@
 
   <body>
     <div class="page-wrapper">
+      <!-- Language Support -->
+      <div class="language-support">
+        <button class="language-toggle">
+          <i class="fa-solid fa-globe"></i>
+          <span>Language Support</span>
+        </button>
+        <div class="language-menu">
+          <div class="menu-header">Text Direction</div>
+          <div class="lang-options">
+            <button class="lang-btn" data-dir="ltr">
+              <i class="fa-solid fa-align-left"></i>
+              Left to Right
+            </button>
+            <button class="lang-btn" data-dir="rtl">
+              <i class="fa-solid fa-align-right"></i>
+              Right to Left
+            </button>
+          </div>
+        </div>
+      </div>
       <!------- Header / Branding ------->
       <header class="site-header">
         <img src="img/loreal-logo.png" alt="L'Oréal Logo" class="logo" />
         <h1 class="site-title">Smart Routine &amp; Product Advisor</h1>
       </header>
 
-      <!-- Category Filter -->
+      <!-- Category Filter and Search -->
       <div class="search-section">
+        <div class="search-container">
+          <input type="text" id="productSearch" placeholder="Search products...">
+          <i class="fa-solid fa-search search-icon"></i>
+        </div>
         <select id="categoryFilter">
           <option value="" disabled selected>Choose a Category</option>
+          <option value="all">All Products</option>
           <option value="cleanser">Cleansers</option>
           <option value="moisturizer">Moisturizers & Treatments</option>
           <option value="haircare">Haircare</option>
@@ -84,9 +109,8 @@
         </nav>
       </footer>
     </div>
-
-    <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
-    <script src="secrets.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
+    <!-- Import marked library for markdown parsing -->
+    <script type="module" src="script.js"></script>
   </body>
 </html>
